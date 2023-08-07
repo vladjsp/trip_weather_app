@@ -49,4 +49,51 @@ a {
 
 body {
   background-color: $background;
+  color: $text-main;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  background-color: #000;
+  padding: 0 2rem;
+}
+
+.header {
+  padding: 2rem 0;
+  font-size: 2rem;
+}
+
+.search {
+  position: relative;
+  background-color: $secondary-bg;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin: 1rem 0;
+
+  input[type='search'] {
+    border: none;
+    padding: 8px 8px 8px 35px;
+    width: 100%;
+    font-size: 0.85rem;
+    background: transparent;
+    font-weight: 700;
+  }
+
+  @media (max-width: 720px) {
+    margin: 1rem auto;
+  }
+
+  .icon {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    opacity: 0.5;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
