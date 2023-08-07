@@ -2,7 +2,7 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import SideBar from './components/SideBar';
 import TripsList from './components/TripsList';
-import WeekWeatherBar from './components/WeekWeatherBar';
+import WeekForecast from './components/weekForecast';
 import './scss/app.scss';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <Header />
         <SearchBar />
         <TripsList />
-        <WeekWeatherBar />
+        <WeekForecast />
       </div>
       <SideBar />
     </>
