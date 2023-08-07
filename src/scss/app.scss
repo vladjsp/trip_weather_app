@@ -149,3 +149,29 @@ body {
     font-size: 1.25rem;
   }
 }
+
+.weekForecast {
+  margin: 1rem 0;
+}
+
+.forecast {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  .day-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 7rem;
+    text-align: center;
+    min-height: 8rem;
+    h4 {
+      font-weight: normal;
+    }
+    img {
+      margin: 0 auto;
+      padding: 0.5rem 0;
+    }
+  }
+}
