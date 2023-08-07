@@ -2,22 +2,22 @@
   {
     "id": "skdjbfksjdbfksjd",
     "city": "Berlin",
-    "startDate": "14.07.2023",
-    "endDate": "21.07.2023",
+    "startDate": "14.09.2023",
+    "endDate": "21.09.2023",
     "image": "https://images.pexels.com/photos/1576002/pexels-photo-1576002.jpeg"
   },
   {
     "id": "sdfwskdjbfksdfsjdbfksjd",
     "city": "Tokyo",
-    "startDate": "14.07.2023",
-    "endDate": "21.07.2023",
+    "startDate": "14.09.2023",
+    "endDate": "21.09.2023",
     "image": "https://images.pexels.com/photos/1701747/pexels-photo-1701747.jpeg"
   },
   {
     "id": "sdfskdjbfksjdbfksjd",
     "city": "Barselona",
-    "startDate": "14.07.2023",
-    "endDate": "21.07.2023",
+    "startDate": "14.09.2023",
+    "endDate": "21.09.2023",
     "image": "https://images.pexels.com/photos/1338393/pexels-photo-1338393.jpeg"
   }
 ]

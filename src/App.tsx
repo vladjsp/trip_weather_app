@@ -14,7 +14,7 @@ function App() {
         <TripsList />
         <WeekForecast />
       </div>
-      <SideBar />
+      <SideBar city='New York' tripStartDate='15.09.2023' />
     </>
   );
 }
