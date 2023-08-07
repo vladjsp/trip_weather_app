@@ -21,18 +21,6 @@ body {
   color: $text-main;
 }
 
-a,
-span,
-p,
-b,
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: $text-main;
-}
-
 h1 {
   font-size: 48px;
 }
@@ -172,6 +160,54 @@ body {
     img {
       margin: 0 auto;
       padding: 0.5rem 0;
+    }
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 30%;
+  background-color: $sidebar-bg;
+  color: #fff;
+  text-align: center;
+
+  .weather {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    img {
+      height: 3rem;
+    }
+
+    p {
+      font-size: 3.5rem;
+      color: #fff;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .city {
+    color: #fff;
+    font-size: 1.25rem;
+  }
+
+  .timer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+
+    .number {
+      font-weight: 800;
+      font-size: 1.5rem;
+    }
+
+    .title {
+      font-size: 0.65rem;
+      color: $text-secondary;
+      text-transform: uppercase;
     }
   }
 }
