@@ -1,23 +1,34 @@
+import { useAppSelector } from '../hooks/useRTK';
 import DayWeatherCard from './DayWeatherCard';
-import mockForecast from '../data/mockForecast.json';
+import { RequestStatus } from '../types/enums';
+import Spinner from './Spinner';
 
-const weekForecast = () => {
+const WeekForecast = () => {
+  const { requestStatus, tripWeather } = useAppSelector((state) => state.weather);
+
+  const daysWeatherToDisplay = tripWeather.days?.slice(0, 7);
   return (
     <div className='weekForecast'>
       <h3>Week</h3>
-      <div className='forecast'>
-        {mockForecast.days.map((day) => (
-          <DayWeatherCard
-            key={day.datetime + day.datetimeEpoch}
-            date={day.datetime}
-            icon={day.icon}
-            tempmax={day.tempmax}
-            tempmin={day.tempmin}
-          />
-        ))}
-      </div>
+      {requestStatus === RequestStatus.Loading ? (
+        <Spinner />
+      ) : (
+        <div className='forecast'>
+          {daysWeatherToDisplay
+            ? daysWeatherToDisplay.map((day) => (
+                <DayWeatherCard
+                  key={day.datetime + day.datetimeEpoch}
+                  date={day.datetime}
+                  icon={day.icon}
+                  tempmax={day.tempmax}
+                  tempmin={day.tempmin}
+                />
+              ))
+            : ''}
+        </div>
+      )}
     </div>
   );
 };
 
-export default weekForecast;
+export default WeekForecast;

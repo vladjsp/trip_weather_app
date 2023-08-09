@@ -1,14 +1,21 @@
 import { ChangeEvent, useState } from 'react';
+import { useAppDispatch } from '../hooks/useRTK';
+import { changeSearch } from '../redux/slices/tripsSlice';
 
 const SearchBar = () => {
+  const dispatch = useAppDispatch();
+
   const [value, setValue] = useState('');
 
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+    const searchText = event.target.value;
+    setValue(searchText);
+    dispatch(changeSearch(searchText));
   };
 
   const onClickClear = () => {
     setValue('');
+    dispatch(changeSearch(''));
   };
 
   return (

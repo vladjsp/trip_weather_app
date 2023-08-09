@@ -6,28 +6,28 @@ const BASE_WEATHER_API_URL =
   'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/';
 const API_KEY = '9XD2P34M6NK4J6YUY8LPATR8N';
 
-export const getTodayWeather = createAsyncThunk(
-  'weather/getTodayWeather',
-  async ({ city }: { city: string }) => {
-    try {
-      const response = await fetch(
-        `${BASE_WEATHER_API_URL}${city}/today?unitGroup=metric&include=days&key=${API_KEY}&contentType=json`
-      );
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error(error);
-      throw new Error('Error occurred while getting user info.');
-    }
+export const getTodayWeather = createAsyncThunk('weather/getTodayWeather', async (city: string) => {
+  try {
+    const response = await fetch(
+      `${BASE_WEATHER_API_URL}${city}/today?unitGroup=metric&include=days&key=${API_KEY}&contentType=json`
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw new Error('Error occurred while getting user info.');
   }
-);
+});
 
 export const getTripWeather = createAsyncThunk(
   'weather/getTripWeather',
   async ({ city, date1, date2 }: { city: string; date1: string; date2: string }) => {
+    const startTripDay = date1.split('.').reverse().join('-');
+    const endTripDate = date2.split('.').reverse().join('-');
+
     try {
       const response =
-        await fetch(`${BASE_WEATHER_API_URL}${city}/${date1}/${date2}?unitGroup=metric&include=days&key=${API_KEY}&cont
+        await fetch(`${BASE_WEATHER_API_URL}${city}/${startTripDay}/${endTripDate}?unitGroup=metric&include=days&key=${API_KEY}&cont
     entType=json`);
       const data = await response.json();
       return data;
